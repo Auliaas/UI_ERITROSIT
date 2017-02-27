@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jq211.js"></script>
+    <script src="js/get-json.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">   
+</style>
+</head>
+<body ng-app="starter">
+<ion-pane>
+<ion-content>
+<div class="signupcard">
+  <img src="img/signup.png">
+                <div class="list">
+                  <label class="item item-input">
+                    <span class="input-label2">Email</span>
+                    <div class="itext"><input type="text" id="email" name="email" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">Password</span>
+                    <div class="itext"><input type="password" id="password" name="password" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">First Name</span>
+                    <div class="itext"><input type="text" id="firstname" name="firstname" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                   <label class="item item-input">
+                    <span class="input-label2">Last Name</span>
+                    <div class="itext"><input type="text" id="lastname" name="lastname" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                   <label class="item item-input">
+                    <span class="input-label2">Place of Birthday</span>
+                    <div class="itext"><input type="text"  name="pob" id="pob" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">Date of Birthday</span>
+                    <div class="itext"><input type="text"  name="dob" id="dob" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                   <label class="item item-input item-select2">
+                      <div class="input-label" style="color:white;" required>Sex</div>
+                      <select name="sex" id="sex">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input item-select2">
+                      <div class="input-label" style="color:white;" required>Blood Type</div>
+                      <select name="bloodtype" id="bloodtype">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="AB">AB</option>
+                        <option value="O">O</option>
+                      </select>
+                    </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">Weight</span>
+                    <div class="itext"><input type="text"  name="weight" id="weight" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">Height</span>
+                    <div class="itext"><input type="text"  name="height" id="height" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">Phone</span>
+                    <div class="itext"><input type="text"  name="phone" id="phone" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">Address</span>
+                    <div class="itext"><input type="text"  name="address" id="address" style="color:white;" required></div>
+                  </label>
+                  <div class="plogin"></div>
+                  <label class="item item-input">
+                    <span class="input-label2">Notes</span>
+                    <div class="itext"><input type="text"  name="notes" id="notes" style="color:white;" required></div>
+                  </label>
+                  <input type="hidden" name="post" id="post" value="">
+                   <button class="button button-block button-assertive" type="submit" value="Save Profile">
+                  Sign Up
+                </button>
+                <div class="colorindex">Back to <u onclick="javascript:location.replace('logout.html')"">Login?</u></div>
+                </div>
+              </div>
+    </div>
+    </ion-content>
+  </ion-pane>
+
+  <script>
+
+    var date;
+    date = new Date();
+    date = date.getUTCFullYear() + '-' +
+        ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+        ('00' + date.getUTCDate()).slice(-2) + ' ' + 
+        ('00' + date.getUTCHours()).slice(-2) + ':' + 
+        ('00' + date.getUTCMinutes()).slice(-2) + ':' + 
+        ('00' + date.getUTCSeconds()).slice(-2);
+    //console.log(date);
+
+    document.getElementById('post').value = date;
+
+    (function ($) {
+        $.fn.serializeFormJSON = function () {
+
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+    })(jQuery);
+
+    $('form').submit(function (e) {
+        e.preventDefault();
+        var jsonData = $(this).serializeFormJSON();
+
+        var jsonStr = jsonData;    
+        console.log(jsonStr);
+
+        var request = $.ajax({
+          url: "http://eritrosit.bajau.com:8100/eritrosit/api/profile",
+          type: "POST",
+          data: jsonData,
+          dataType: "json",
+          success:function(data) {  
+            console.log(data.id);
+
+            var profsess = data.id;
+            sessionStorage['profSess'] = profsess;
+            console.log(profsess);
+
+          }
+        });
+
+        alert('Your profile has been update. Thank You.');
+        location.replace('index.html');
+    });
+
+  </script>
+
+
+
+  </body>
+</html>
+</body>
+</html>

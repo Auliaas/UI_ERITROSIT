@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/main.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+  <body ng-controller="MainCtrl">
+  <ion-side-menus>
+  <ion-side-menu side="left">
+            <div class="sizelogo">
+           <ion-list>
+            <img src="img/logo.png">
+           </ion-list>
+           </div>
+           <div class="size">
+           <button class="button-full button-clear" onClick="javascript:location.replace('menu.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-information-circled"> Information </i></div>
+            </ion-item>
+            </ion-list>
+            </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('donation.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-waterdrop">  Donation</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('requests.html')">
+          <ion-list>
+              <ion-item>
+               <div class="c"><i class="ion-document-text"> Requests</i></div>
+           </ion-item>
+           </ion-list>
+           </button>
+           <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('events.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-compose"> Create Events</i></div>
+          </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('location.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-location"> Location</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('list.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-clipboard"> List</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('about.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-help-circled"> About</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+         </div>
+      </ion-side-menu>
+<body>
+<ion-side-menu-content>
+<div class="bar bar-header bar-assertive">
+    <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+    <div class="h1 title">List Requests</div>
+     <button class="button button-clear" onClick="javascript:location.replace('profile.html')"><i class="ion-person"></i></button>
+    </button>
+    </div>
+<ion-pane>
+    <div class="tabs tabs-top tabs-icon-left">
+  <a class="tab-item" onclick="javascript:location.replace('list.html')">
+    <i class="icon ion-waterdrop"></i>
+    Donation
+  </a>
+  <a class="tab-item" onclick="javascript:location.replace('listevents.html')">
+     <i class="icon ion-compose"></i>
+    Event
+  </a>
+  <a class="tab-item" onclick="javascript:location.replace('listrequests.html')">
+    <i class="icon ion-email"></i>
+    Requests
+  </a>
+  </div>
+  <div class="list">
+        <div class="card" style="padding:10px;text-align:center;margin-top:130px;">
+
+          <div class="list">
+              <div id="id02"></div>
+              <script>
+              getMyJson("http://eritrosit.bajau.com:8100/eritrosit/api/request");
+
+              function myFunction(arr) {
+                  var out = "";
+                  for(i = 0; i < arr.length; i++) {
+                    out += '<a class="item item-avatar" href="#">';
+                    out += '<img src="img/blood-bag.png">';
+                    out += '<h2>'+arr[i].receivername+' (age : '+arr[i].age+') ('+arr[i].sex+')</h2>';
+                    out += '<p>'+arr[i].address+'<br>Blood type : <b>'+arr[i].bloodtype+'</b></p>';
+                    out += '</a>';
+                  }
+                  //console.log(out);
+                  document.getElementById("id02").innerHTML = out;
+              }
+              </script>
+          </div>
+
+        </div>
+      </div>
+
+      </ion-content>
+  </ion-pane>
+  </ion-side-menu-content>
+  </body>
+  </button>
+  </div>
+  </ion-side-menu>
+  </ion-side-menus>
+  </body>
+  </html>

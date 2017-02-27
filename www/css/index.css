@@ -1,0 +1,14 @@
+.pane{
+	background: url('../img/1.png') repeat center center fixed; 
+    -webkit-background-size: cover;
+}
+.border{
+	border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    color: white;
+    padding-left: 12px;
+    opacity: 0.4;
+}
+.sizeinput{
+	
+}

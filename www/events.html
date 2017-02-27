@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/main.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+  <body ng-controller="MainCtrl">
+  <ion-side-menus>
+  <ion-side-menu side="left">
+            <div class="sizelogo">
+           <ion-list>
+            <img src="img/logo.png">
+           </ion-list>
+           </div>
+            <div class="size">
+           <button class="button-full button-clear" onClick="javascript:location.replace('menu.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-information-circled"> Information </i></div>
+            </ion-item>
+            </ion-list>
+            </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('donation.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-waterdrop">  Donation</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('requests.html')">
+          <ion-list>
+              <ion-item>
+               <div class="c"><i class="ion-document-text"> Requests</i></div>
+           </ion-item>
+           </ion-list>
+           </button>
+           <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('events.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-compose"> Create Events</i></div>
+          </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('location.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-location"> Location</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('list.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-clipboard"> List</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('about.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-help-circled"> About</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+         </div>
+      </ion-side-menu>
+<body>
+<ion-side-menu-content>
+    <div class="bar bar-header bar-assertive">
+    <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+    <div class="h1 title">Create Events</div>
+     <button class="button button-clear" onClick="javascript:location.replace('profile.html')"><i class="ion-person"></i></button>
+    </button>
+    </div>
+      <ion-pane>
+      <ion-content>
+      <div class="sizecardrequest">
+      <div class="card" style="padding:10px;">
+    <form method="post" action="#" enctype='application/json'>
+    <label class="item item-input item-select">
+      <div class="input-label">Instance Name</div>
+        <div id="id02"></div>
+        <script>
+        getMyJson("http://eritrosit.bajau.com:8100/eritrosit/api/instance");
+
+        function myFunction(arr) {
+            var out = "";
+            var i;
+            out += "<select name='instance_id' id='instance_id'>";
+            for(i = 0; i < arr.length; i++) {
+              out += '<option value="'+arr[i].id+'">'+arr[i].name+'</option>';
+            }
+            out += "</select>";
+            //console.log(out);
+            document.getElementById("id02").innerHTML = out;
+        }
+        </script>
+    </label>
+      <label class="item item-input"><div class="input-label">Event Name</div>
+      <input type="text" placeholder="Event Name" name="name" id="name" required>
+    </label>
+    </label>
+    <label class="item item-input"><div class="input-label">Location</div>
+    <textarea placeholder="Location/Address" name="location" id="location" required></textarea>
+    </label>
+    </label>
+      <label class="item item-input"><div class="input-label">Latitude</div>
+      <input type="text" placeholder="Latitude" name="lat" id="lat">
+    </label>
+    </label>
+      <label class="item item-input"><div class="input-label">Longitude</div>
+      <input type="text" placeholder="Longitude" name="lon" id="lon">
+    </label>
+    </label>
+      <label class="item item-input"><div class="input-label" required>Start Date</div>
+      <input type="date" placeholder="Select Start Date" name="event_startdate" id="event_startdate">
+    </label>
+      <label class="item item-input"><div class="input-label" required>End Date</div>
+      <input type="date" placeholder="Select End Date" name="event_enddate" id="event_enddate">
+    </label>
+    <label class="item item-input"><div class="input-label">Contact Person</div>
+      <input type="text" placeholder="Contact Person" name="contactperson" id="contactperson" required>
+    </label>
+    <label class="item item-input"><div class="input-label">Contact Number</div>
+      <input type="text" placeholder="Contact Phone Number" name="contactphone" id="contactphone" required>
+    </label>
+    <input type="hidden" name="post" id="post" value="">
+    <input type="submit" class="button button-block" value="Save Event">
+    </form>
+  </div>
+  </div>
+  </ion-content>
+  </ion-pane>
+  </ion-side-menu-content>
+
+  <script>
+    var date;
+    date = new Date();
+    date = date.getUTCFullYear() + '-' +
+        ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
+        ('00' + date.getUTCDate()).slice(-2) + ' ' + 
+        ('00' + date.getUTCHours()).slice(-2) + ':' + 
+        ('00' + date.getUTCMinutes()).slice(-2) + ':' + 
+        ('00' + date.getUTCSeconds()).slice(-2);
+    //console.log(date);
+
+    document.getElementById('post').value = date;
+
+    (function ($) {
+        $.fn.serializeFormJSON = function () {
+
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+    })(jQuery);
+
+    $('form').submit(function (e) {
+        e.preventDefault();
+        var jsonData = $(this).serializeFormJSON();
+
+        var jsonStr = jsonData;    
+        console.log(jsonStr);
+
+        var request = $.ajax({
+          url: "http://eritrosit.bajau.com:8100/eritrosit/api/event",
+          type: "POST",
+          data: jsonData,
+          dataType: "json",
+        });  
+
+        alert('Create event success. Thank You.');
+        location.replace('menu.html');
+
+    });
+ </script>
+</body>
+</ion-side-menus>
+</body>
+</html>

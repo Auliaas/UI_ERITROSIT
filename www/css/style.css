@@ -1,0 +1,192 @@
+.c{
+	 position:relative;
+	color:#FEFBFA;
+  margin-left:10px;
+}
+.a{
+	position:absolute;
+	margin-left:230px;
+}
+.size{
+	position:relative;
+	margin-top:30px;
+}
+.sizelogo{
+	position:relative;
+	margin-top:10px;
+}
+.sizeinformasi{
+position:relative;	
+}
+
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  margin: auto;
+  margin-top: 43px;
+}
+0
+/* The dots/bullets/indicators */
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.judul{
+  text-align:center;
+  position:relative;
+}
+.sizeicon{
+  color:#efa03a ;
+  font-size: 25px;
+}
+.sizeicon2{
+  color:#ef3a3a;
+  font-size: 25px;
+}
+.sizeicon3{
+  color:#3a3a3a ;
+  font-size: 25px;
+}
+.sizeicon4{
+  color: #ff0000 ;
+  font-size: 35px;
+}
+.sizewhy{
+  margin-top: -45px;
+  text-align:center;
+  display:none;
+}
+.sizecard{
+  margin-top:40px;
+}
+.sizecardp{
+  margin-top:70px;
+}
+.sizecard3{
+    margin-top: 20px;
+}
+.sizecard2{
+  margin-top:20px;
+  display:none;
+}
+.sizecardrequest{
+  margin-top:79px;
+}
+.sizecardbenefits{
+  margin-top: 22px;
+  display:none;
+}
+.sizeicon5{
+  margin-top:20px;
+  color: #66d9ff;
+  font-size: 25px;
+}
+.cardsizeicon{
+      margin-top: 5;
+      text-align:center;
+}
+.colsatu{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-left: 0 auto;
+    color: red;
+}
+.coldua{
+  position:relative;
+  text-align:center;
+  width:100%;
+  color:red;
+}
+.col3{
+  position:relative;
+  text-align:center;
+  width:100%;
+  color:red;
+}
+.col4{
+  position:relative;
+  text-align:center;
+  width:100%;
+  margin-right: 0 auto;
+  color:red;
+}
+.text{
+  position:relative;
+  text-align:center;
+  margin-left:-80px;
+  margin-top:-20px;
+}
+
+.card4{
+  display:none;
+}
+.texticon{
+  color:red;
+  text-align:center;
+}
+.button4{
+  text-align:center;
+}
+.logincard{
+   padding: 100px 14px 15px 14px;
+  text-align: center;
+}
+.signupcard{
+  padding: 73px 14px 15px 14px;
+  text-align: center;
+}
+.cardlogin{
+  padding-bottom: 20px;
+  margin-top: 31px;
+  padding-left: 6px;
+}
+.colorindex{
+  color: white;
+}
+.plogin{
+  border-style: solid;
+  color: white;
+  border-width: 0px 0px 2px 0px;
+  text-align: left;
+  width: 101%;
+  margin-left: -8px;
+  margin-top: 10px;
+}
+.ulog{
+  padding-top: 10px;
+}
+.itext{
+  color: #fff;
+  width: 100%;
+}
+u{
+  padding-top: 5px;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}

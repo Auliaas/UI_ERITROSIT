@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $(".colsatu").click(function(){
+          $(".sizecard3").animate({
+              height: 'show'
+              })
+          $(".sizewhy").hide();
+          $(".card4").hide();
+          $(".sizecardbenefits").hide();
+        })
+      $(".coldua").click(function(){
+          $(".sizewhy").animate({
+              height: 'show'
+              })
+          $(".sizecard3").hide();
+          $(".card4").hide();
+          $(".sizecardbenefits").hide();
+        })
+      $(".col4").click(function(){
+          $(".card4").animate({
+              height: 'show'
+              })
+          $(".sizecard3").hide();
+          $(".sizewhy").hide();
+          $(".sizecardbenefits").hide();
+        })
+      $(".col3").click(function(){
+          $(".sizecardbenefits").animate({
+              height: 'show'
+              })
+          $(".sizecard3").hide();
+          $(".sizewhy").hide();
+          $(".card4").hide();
+        })
+    });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+ <body ng-controller="MainCtrl">
+  <ion-side-menus>
+  <ion-side-menu side="left">
+           <div class="sizelogo">
+           <ion-list>
+            <img src="img/logo.png">
+           </ion-list>
+           </div>
+           <div class="size">
+           <button class="button-full button-clear" onClick="javascript:location.replace('menu.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-information-circled"> Information </i></div>
+            </ion-item>
+            </ion-list>
+            </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('donation.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-waterdrop">  Donation</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('requests.html')">
+          <ion-list>
+              <ion-item>
+               <div class="c"><i class="ion-document-text"> Requests</i></div>
+           </ion-item>
+           </ion-list>
+           </button>
+           <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('events.html')">
+           <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-compose"> Create Events</i></div>
+          </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('location.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-location"> Location</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('list.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-clipboard"> List</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+          <button class="button button-full button-clear button-positive" onClick="javascript:location.replace('about.html')">
+          <ion-list>
+            <ion-item>
+            <div class="c"><i class="ion-help-circled"> About</i></div>
+            </ion-item>
+          </ion-list>
+          </button>
+         </div>
+      </ion-side-menu>
+<body>
+   <ion-side-menu-content>
+    <div class="bar bar-header bar-assertive">
+        <button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+        <div class="h1 title">Information</div>
+        <button class="button button-clear" onClick="javascript:location.replace('profile.html')"><i class="ion-person"></i></button>
+        </button>
+    </div>
+<ion-pane>
+<ion-content>
+<div class="slideshow-container">
+
+<div style="text-align:center">
+<div class="mySlides fade">
+  <img  src="img/index_img_slider-1.jpg" style="width:100%">
+</div>
+
+<!--<div class="mySlides fade">
+  <img   src="img/index_img_slider-2.jpg" style="width:100%">
+</div>-->
+
+<div class="mySlides fade">
+  <img  src="img/index_img_slider-3.jpg" style="width:100%">
+</div>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+<br>
+<script src="js/slide.js"></script>
+</div>
+<div class="card2">
+  <div class="row" style="background: url('../img/h2.png')"">
+      <div class="colsatu"><div class="col col-25">Expect
+      <button class="button button-clear button4"><div class="icon ion-checkmark-circled"  style="color:red";></div></button></div></div>
+      <div class="coldua"><div class="col col-25">Why<button class="button button-clear  button4"><div class="icon ion-medkit"  style="color:red";></div></button></div></div>
+      <div class="col3"><div class="col col-25">Benefits<button class="button button-clear  button4"><div class="icon ion-heart"  style="color:red";></div></button></div><!--<div class="text">Benefits</div>--></div>
+      <div class="col4"><div class="col col-25">How<button class="button button-clear  button4"><div class="icon ion-chatbox-working" style="color:red";></div></button></div></div>
+      </div>
+    </div>
+<div class="sizecard3">
+ <div class="card">
+        <div class="item item-divider">
+          <b>What Can You Expect?</b>
+        </div>
+</div>
+<div class="card">
+  <div class="item item-light item-text-wrap">
+  <div class="sizeicon">
+    <i class="icon ion-coffee">
+    </i><br>
+  </div>
+    Have a light meal and plenty to drink.
+  </div>
+</div>
+<div class="card">
+  <div class="item item-light item-text-wrap">
+  <div class="sizeicon2">
+    <i class="icon ion-android-clipboard">
+    </i><br>
+  </div>
+    Bring your donor card, driver's license or two other form of identification.
+  </div>
+</div>
+<div class="card">
+  <div class="item item-light item-text-wrap">
+  <div class="sizeicon3">
+    <i class="icon ion-person-stalker">
+    </i><br>
+  </div>
+    Bring the name of medications you are taking.
+  </div>
+</div>
+</div>
+<div class="sizewhy">
+<div class="row">
+<div class="col">
+<img src="img/why1.png">
+</div>
+</div>
+<div class="card">
+<div class="item  item-stable item-text-wrap">
+    Some of us give blood because we  were asked by a friend.
+  </div>
+<div class="item  item-stable item-text-wrap">
+    Some know that a family member or a friend might need blood some day.
+  </div>
+<div class="item  item-stable item-text-wrap">
+    Some believe it is the right thing we do.
+  </div>
+</div>
+</div>
+<div class="card4">
+<div class="card">
+<div class="row">
+<div class="col"><img src="img/pembangunan_jembatan.jpg" style="width:100%"></div>
+</div>
+<div class="row">
+<div class="col"><img src="img/step2fixbgt.jpg" style="width:100%"></div>
+</div>
+<div class="row">
+<div class="col"><img src="img/step3fixbgt.jpg" style="width:100%"></div>
+</div>
+<div class="row">
+<div class="col"><img src="img/step4fixbgt.jpg" style="width:100%"></div>
+</div>
+</div>
+</div>
+<div class="sizecardbenefits">
+<div class="card">
+        <div class="item item-divider">
+          <b>Some Health Benefits</b>
+        </div>
+</div>
+<div class="card">
+  <div class="item item-light item-text-wrap">
+  <div class="sizeicon4">
+    <i class="icon ion-android-drafts">
+    </i><br>
+  </div>
+    You will receive a mini physical to check your:<br>
+   <div class="sizeicon5"> 
+   <i class="icon ion-android-arrow-dropdown-circle" style="color:#84e9ed;"></i>
+  </div>
+  Pulse<br>
+  Blood pressure<br>
+  Body temperature<br>
+  Hemoglobin<br>
+</div>
+</div>
+</div>
+</ion-content>
+</ion-pane>
+</ion-side-menu-content>
+</body>
+</ion-side-menus>
+</body>
+</html>
